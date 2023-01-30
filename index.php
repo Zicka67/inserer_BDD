@@ -18,6 +18,7 @@ session_start();
 </head>
 
 <body>
+
     
  <!-- <?php spl_autoload_register(function ($class_name) {
                 require_once $class_name . '.php';
@@ -44,36 +45,38 @@ session_start();
         </ul>
     </nav>
 
-    <div class="list-product">
+    <div>
             <?php
             require_once('db-functions.php');
 
             $store = findAll();
 
-
-            // On affiche chaques produits un a un -- ucfirst — Met le premier caractère en majuscule
             foreach ($store as $article) {
             ?>
-                <article> 
-                    <a href=product.php?id=<?= $article['id'] ?>"> 
-                        <div >
-                            <img src="<?= $article['image_url'] ?>" alt="<?= ucFirst($article['name']) ?>"> 
-                        </div>
-                        <div >
-                            <p '>€<?= $article['price']; ?></p>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere consectetur nihil totam quidem asperiores. Praesentium sit porro culpa ipsum velit consequatur dignissimos, alias reprehenderit illo tempora itaque cumque facilis! Corporis!</p>
-                            <a href="">Ajouter aux articles</a>
-                            <br><br>
+                <article>
+                    <a href="product.php?id=<?= $article['id'] ?>">
+                        <div>                         
+                            <img  class="" src="<?= $article['photo'] ?>" alt="<?= ucFirst($article['name']) ?>">
+
                         </div>
                     </a>
+                        <div>
+                            <?php //"<?=" va echo id de $article
+                            ?>
+                            <a href="product.php?id=<?= $article['id'] ?>"> <?= ucFirst($article['description']); ?></a>
+
+                            <p><?= $article['price']; ?> €</p>
+                        </div>
+                    
                 </article>
             <?php
             }
             ?>
         </div>
     </main>
-
     </div>
+    
+
     </body>
 
     <?php
