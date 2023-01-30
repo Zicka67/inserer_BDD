@@ -49,7 +49,9 @@ function dbFunction() {
         
         $sqlRequest = 'SELECT * FROM product WHERE id= :id';
         $storeStatement = $db->prepare($sqlRequest);
-        $storeStatement->execute();
+        $storeStatement->execute([
+            ':id' => $id,
+        ]);
         $store = $storeStatement->fetch(); //fetch = va chercher
         return $store;
     }
@@ -76,22 +78,4 @@ function dbFunction() {
             ':description' => $description
         ]);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
