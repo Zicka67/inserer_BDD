@@ -50,6 +50,7 @@ session_start(); //Cette instruction démarre une nouvelle session ou reprend un
             require_once('db-functions.php');
 
             $store = findAll();
+            
 
             foreach ($store as $article) {
             ?>
@@ -57,16 +58,21 @@ session_start(); //Cette instruction démarre une nouvelle session ou reprend un
                     <a href="product.php?id=<?= $article['id'] ?>">
                         <div>                         
                             <img  class="" src="<?= $article['photo'] ?>" alt="<?= ucFirst($article['name']) ?>">
-
+                            <a href="traitement.php?action=addToCart&id=<?= $product['id'] ?>">
+                                <div class="product-name">
+                                    <?= ucFirst($article['name'])?> 
                         </div>
                     </a>
+                    <div>
+                            <?= $article['description']?>
+                    </div>
                         <div>
                             <?php //"<?=" va echo id de $article
                             ?>
-                            <a href="product.php?id=<?= $article['id'] ?>"> <?= ucFirst($article['description']); ?></a>
-
+                            <!-- <a href="product.php?id=<?= $article['id'] ?>"> <?= ucFirst($article['description']); ?></a> -->
                             <p><?= $article['price']; ?> €</p>
                         </div>
+                        
                     
                 </article>
             <?php
