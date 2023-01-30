@@ -45,7 +45,7 @@ $product = findOneById($_GET['id']);
 		<div>
 			<article>
 				<div>
-					<img src="<?= $product['img'] ?>" alt="">
+					<img src="<?= $product['photo'] ?>" alt="">
 				</div>
 				<div>
 					
