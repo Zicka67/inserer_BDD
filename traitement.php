@@ -1,29 +1,6 @@
 <?php
 session_start();
 
-// if(isset($_POST["action"]) && $_POST["action"] == "addProduct") {
-//     $product = array(
-//         "name" => $_POST["name"],
-//         "price" => $_POST["price"],
-//         "qtt" => $_POST["qtt"]
-//     );
-
-//     if(!isset($_SESSION["products"])) {
-//         $_SESSION["products"] = array();
-//     }
-
-//     array_push($_SESSION["products"], $product);
-
-//     if(!isset($_SESSION["total"])) {
-//         $_SESSION["total"] = 0;
-//     }
-
-//     $_SESSION["total"] += ($_POST["price"] * $_POST["qtt"]);
-// }
-
-// redirect to recap page
-// header("Location: recap.php");
-
 
 switch($_GET["action"]) {
 
@@ -101,6 +78,35 @@ switch($_GET["action"]) {
 ?>
 
 
+
+
+<!-- // if(isset($_POST["action"]) && $_POST["action"] == "addProduct") {
+//     $product = array(
+//         "name" => $_POST["name"],
+//         "price" => $_POST["price"],
+//         "qtt" => $_POST["qtt"]
+//     );
+
+//     if(!isset($_SESSION["products"])) {
+//         $_SESSION["products"] = array();
+//     }
+
+//     array_push($_SESSION["products"], $product);
+
+//     if(!isset($_SESSION["total"])) {
+//         $_SESSION["total"] = 0;
+//     }
+
+//     $_SESSION["total"] += ($_POST["price"] * $_POST["qtt"]);
+// }
+
+// redirect to recap page
+// header("Location: recap.php"); -->
 </body>
 
 </html>
+
+
+
+
+
