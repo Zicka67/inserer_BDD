@@ -4,7 +4,7 @@ function dbFunction() {
     try
     {
         // On se connecte à MySQL
-        $sqlClient = new PDO(
+        $db = new PDO(
             'mysql:host=localhost;dbname=store_gk;charset=utf8',
             'root',
             '',
@@ -18,6 +18,7 @@ function dbFunction() {
                 \PDO::MYSQL_ATTR_INIT_COMMAND => 'set NAMES utf8' 
                 ]
             );
+            return $db;//return $db représente la connexion à la base de données MySQL. OBLIGATOIRE pour se lier a la base de donnée. A pas oublier comme la ...
         } catch (Exception $e)  
         {
             // En cas d'erreur, on affiche un message et on arrête tout
