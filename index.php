@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); //Cette instruction démarre une nouvelle session ou reprend une session existante pour cet utilisateur.
 ?>
 
 <!DOCTYPE html>
