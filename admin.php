@@ -18,7 +18,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
 
 
-    <title>HTML Panier</title>
+    <title>Admin</title>
 
 </head>
 
