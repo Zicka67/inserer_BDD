@@ -37,6 +37,7 @@
 
 
 
+
 p {
     font-style: 20px;
     color: rgb(73, 73, 73);
@@ -254,6 +255,17 @@ nav img {
     right: 20px;
 }
 
+.resize {
+    width: 250px;
+    height: 200px;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    border: solid 2px black;
+}
+
 /* ***************************** FRUITS **************************** */
 
 .fruits-container {
@@ -323,4 +335,53 @@ nav img {
 
 .flex {
     display: flex;
+}
+
+.orange  {
+    color: orange;
+    text-decoration: none;
+}
+
+.button-container  {
+    background-color: rgb(73, 73, 73);
+    border-radius: 5px;
+    width: 140px;
+    height: 20px;
+   margin-left: 5px;
+}
+
+ 
+/* *********************** PRODUCT  **************************** */
+
+.container-product {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 450px;
+    height: auto;
+}
+
+.container-product img {
+    border-radius: 10px;
+}
+
+.img-product {
+    width: 250px;
+    height: 250px;
+}
+
+article {
+    width: 150px;
+    height: 250px;
+    background-color: rgb(233, 233, 233);
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 800px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+article img {
+    width: 150px;
+    height: auto;
 }
