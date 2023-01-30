@@ -23,44 +23,44 @@ $product = findOneById($_GET['id']);
 <header>
 		<nav>
 			<a href="index.php">
-				<i class="fa fa-home"></i>
+				<!-- <i></i> image home a mettre -->
 			</a>
 			<ul>
 				<li>
 					<a href="index.php">INDEX</a>
 				</li>
 				<li>
-					<a href="recap.php">RÉCAP</a>
+					<a href="recap.php">RECAP</a>
 				</li>
 			</ul>
 			<a href="recap.php" <?php if (nbProduits() == null || nbProduits() == 0) {
 									echo "style= 'display: none'";
 								} ?>>
-				<i class="fa fa-shopping-cart"></i>
-				<p id="shoppingCart"><?= nbProduits() ?></p>
+				<!-- <i></i> // image panier a mettre -->
+				<p><?= nbProduits() ?></p>
 			</a>
 		</nav>
 	</header>
 	<main>
-		<div id="container">
-			<article id="productFocus">
-				<div id="productIMG">
+		<div>
+			<article>
+				<div>
 					<img src="<?= $product['img'] ?>" alt="">
 				</div>
-				<div id="productInfo">
+				<div>
 					
 					<h1><?= ucFirst($product['name']) ?></h1>
 					
-					<p id="productPrice"><?= $product['price'] ?> €</p>
+					<p><?= $product['price'] ?> €</p>
 					
-					<p class='description'><?= ucFirst($product['description']) ?></p>
+					<p><?= ucFirst($product['description']) ?></p>
 					
-					<div id="actionProduct">
+					<div>
 
 						<a href="index.php">Retour</a>
 						
 						<div>
-						<i class="fa fa-shopping-cart"></i>
+						<!-- <i></i> // image panier a mettre -->
 							<a href="traitement.php?action=addToCart&id=<?= $_GET['id'] ?>">Ajouter un produit</a>
 							
 						</div>
