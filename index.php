@@ -50,16 +50,15 @@ session_start(); //Cette instruction démarre une nouvelle session ou reprend un
             require_once('db-functions.php');
 
             $store = findAll();
-            
-
+        
             foreach ($store as $article) {
             ?>
                 <article>
-                    <a href="product.php?id=<?= $article['id'] ?>">
+                <a href="product.php?id=<?= $article['id'] ?>">             
                         <div>                         
-                            <img  class="" src="<?= $article['photo'] ?>" alt="<?= ucFirst($article['name']) ?>">
+                            <img src="<?= $article['photo'] ?>" alt="<?= ucFirst($article['name']) ?>">
                             <a href="traitement.php?action=addToCart&id=<?= $product['id'] ?>">
-                                <div class="product-name">
+                                <div>
                                     <?= ucFirst($article['name'])?> 
                         </div>
                     </a>
