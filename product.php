@@ -21,25 +21,25 @@ $product = findOneById($_GET['id']);
 
 <body>  
 <header>
-		<nav>
-			<a href="index.php">
-				<!-- <i></i> image home a mettre -->
-			</a>
-			<ul>
-				<li>
-					<a href="index.php">INDEX</a>
-				</li>
-				<li>
-					<a href="recap.php">RECAP</a>
-				</li>
-			</ul>
-			<a href="recap.php" <?php if (nbProduits() == null || nbProduits() == 0) {
-									echo "style= 'display: none'";
-								} ?>>
-				<!-- <i></i> // image panier a mettre -->
-				<p><?= nbProduits() ?></p>
-			</a>
-		</nav>
+<nav>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="recap.php">Récapitulatif</a></li>
+            <img src="img\panier.png" alt="">
+            <div class="centrer">
+                <?php
+
+                if (isset($_SESSION["products"])) {
+                    $panier_count = count($_SESSION["products"]);
+
+                    echo "&nbsp Articles : " . $panier_count;
+                } else {
+                    echo "&nbsp Article : 0";
+                }
+                ?>
+            </div>
+        </ul>
+    </nav>
 	</header>
 	<main>
 		<div>
@@ -53,16 +53,18 @@ $product = findOneById($_GET['id']);
 					
 					<p><?= $product['price'] ?> €</p>
 					
-					<p><?= ucFirst($product['description']) ?></p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga harum vel totam temporibus atque repellat quos aperiam earum! Deleniti alias laboriosam ex facere mollitia, modi temporibus optio eum iste! Non?</p>
 					
 					<div>
-
-						<a href="index.php">Retour</a>
-						
 						<div>
 						<!-- <i></i> // image panier a mettre -->
-							<a href="traitement.php?action=addToCart&id=<?= $_GET['id'] ?>">Ajouter un produit</a>
-							
+						<form action="traitement.php?action=addToCart&id=<?= $_GET['id'] ?>" method="post">
+  						<input type="submit" value="Ajouter un produit">
+						</form>
+
+
+						<a href="index.php">Retour</a>
+
 						</div>
 					</div>
 				</div>
