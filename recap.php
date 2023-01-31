@@ -64,7 +64,7 @@ include "nbProduit.php"; //Création d'un fichier a part pour cette function, en
         foreach ($_SESSION["products"] as $index => $product) {
             echo "<tr>",
                 "<td>" . $index . "</td>",
-                "<td>" . $product["name"] . "</td>",
+                "<td style='font-size:18px'>" . ucfirst($product["name"])  . "</td>", // ucFirst() pour mettre la première lettre en maj
                 "<td>" . number_format($product["price"], 2, ",", "") . " €</td>",
                 //dans la ligne suivante id est lié a $_GET['id'] si $_GET['id'] serait $_GET['lol'], id ici serait lol
                 "<td><a class='test' href='traitement.php?action=lowerQtt&id=$index'> - </a>" . $product["qtt"] . "<a class='test2' href='traitement.php?action=addQtt&id=$index'> + </a>" . "<a href='traitement.php?action=" . $index . "'></a></td>",
@@ -79,10 +79,13 @@ include "nbProduit.php"; //Création d'un fichier a part pour cette function, en
             "</tbody>",
             "</table>";
     }
+    if (isset($_SESSION['messageError'])) { //Vérifie si une variable "messageError" est définie dans la session actuelle.
+        echo $_SESSION['messageError']; //Affiche la valeur de la variable "messageError" si elle est définie.
+        unset($_SESSION['messageError']);//Supprime la variable "messageError" de la session actuelle.
+    }
    
     ?>
     <a class="panier-input2" href="traitement.php?action=deletePanier">Supprimer le panier</a>
-
 
 
 </body>
