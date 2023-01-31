@@ -37,12 +37,12 @@ switch ($_GET["action"]) {
 
         // Decrease Quantity product
     case "lowerQtt":
-        if ($_SESSION['products'][$_GET['id']]['qtt'] > 1) {
-            $_SESSION['products'][$_GET['id']]['qtt']--;
-            $_SESSION['products'][$_GET['id']]['total'] -= $_SESSION['products'][$_GET['id']]['price'];
+        if ($_SESSION['products'][$_GET['id']]['qtt'] > 1) { // Si la qtt dans le tab products et > 1 ALORS
+            $_SESSION['products'][$_GET['id']]['qtt']--; // On baisse de 1 la qtt ET
+            $_SESSION['products'][$_GET['id']]['total'] -= $_SESSION['products'][$_GET['id']]['price'];// On soustrait le total, du prix du product
         } else {
+            $_SESSION['messageError'] = "<div class='test' ><p class=''>Le produit " . ucfirst($_SESSION["products"][$_GET["id"]]["name"]) . " a été retiré de la liste</p></div>";
             unset($_SESSION['products'][$_GET['id']]);
-            
         }
         header("Location: recap.php"); //Redirige vers recap.php
         die;
