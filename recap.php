@@ -20,10 +20,23 @@ include "nbProduit.php"; //Création d'un fichier a part pour cette function, en
 
 <body>
 
-    <nav>
+<nav>
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="recap.php">Récapitulatif</a></li>
+            <img src="img\panier.png" alt="">
+            <div class="centrer">
+                <?php
+
+                if (isset($_SESSION["products"])) {
+                    $panier_count = count($_SESSION["products"]);
+
+                    echo "&nbsp Articles : " . $panier_count;
+                } else {
+                    echo "&nbsp Article : 0";
+                }
+                ?>
+            </div>
         </ul>
     </nav>
 
