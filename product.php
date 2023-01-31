@@ -3,7 +3,7 @@ session_start(); //Cette ligne démarre une nouvelle session ou reprend une sess
 include "nbProduit.php"; //Cette ligne inclut le fichier functions.php dans le code actuel.
 require_once('db-functions.php');//Cette ligne inclut le fichier db-functions.php dans le code actuel, mais qu'une seule fois.
 
-$product = findOneById($_GET['id']);
+$produit = findOneById($_GET['id']);
 ?>
 
 <!DOCTYPE html>
@@ -45,13 +45,13 @@ $product = findOneById($_GET['id']);
 		<div>
 			<article>
 				<div>
-					<img src="<?= $product['photo'] ?>" alt="">
+					<img src="<?= $produit['photo'] ?>" alt="">
 				</div>
 				<div>
 					
-					<h1><?= ucFirst($product['name']) ?></h1>
+					<h1><?= ucFirst($produit['name']) ?></h1>
 					
-					<p><?= $product['price'] ?> €</p>
+					<p><?= $produit['price'] ?> €</p>
 					
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga harum vel totam temporibus atque repellat quos aperiam earum! Deleniti alias laboriosam ex facere mollitia, modi temporibus optio eum iste! Non?</p>
 					
