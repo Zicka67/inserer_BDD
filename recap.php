@@ -61,16 +61,15 @@ include "nbProduit.php"; //Création d'un fichier a part pour cette function, en
 
         $totalGeneral = 0;
 
-        foreach ($_SESSION["products"] as $index => $product) {
+        foreach ($_SESSION["products"] as $index => $produit) {
             echo "<tr>",
                 "<td>" . $index . "</td>",
-                "<td style='font-size:18px'>" . ucfirst($product["name"])  . "</td>", // ucFirst() pour mettre la première lettre en maj
-                "<td>" . number_format($product["price"], 2, ",", "") . " €</td>",
-                //dans la ligne suivante id est lié a $_GET['id'] si $_GET['id'] serait $_GET['lol'], id ici serait lol
-                "<td><a class='test' href='traitement.php?action=lowerQtt&id=$index'> - </a>" . $product["qtt"] . "<a class='test2' href='traitement.php?action=addQtt&id=$index'> + </a>" . "<a href='traitement.php?action=" . $index . "'></a></td>",
-                "<td>" . number_format($product["total"], 2, ",", "") . " € </a>" . "<a href='traitement.php?action=deleteProduct&id=" . $index . "'> <img src='img\poubelle.png' alt=''/> </a></td>",
+                "<td style='font-size:18px'>" . ucfirst($produit["name"])  . "</td>", // ucFirst() pour mettre la première lettre en maj
+                "<td>" . number_format($produit["price"], 2, ",", "") . " €</td>",
+                "<td><a class='test' href='traitement.php?action=lowerQtt&id=$index'> - </a>" . $produit["qtt"] . "<a class='test2' href='traitement.php?action=addQtt&id=$index'> + </a>" . "<a href='traitement.php?action=" . $index . "'></a></td>",
+                "<td>" . number_format($produit["total"], 2, ",", "") . " € </a>" . "<a href='traitement.php?action=deleteProduct&id=" . $index . "'> <img src='img\poubelle.png' alt=''/> </a></td>",
                 "</tr>";
-            $totalGeneral += $product["total"];
+            $totalGeneral += $produit["total"];
         }
         echo "<tr>",
             "<td colspan=4>Total général : </td>",
@@ -82,8 +81,7 @@ include "nbProduit.php"; //Création d'un fichier a part pour cette function, en
     if (isset($_SESSION['messageError'])) { //Vérifie si une variable "messageError" est définie dans la session actuelle.
         echo $_SESSION['messageError']; //Affiche la valeur de la variable "messageError" si elle est définie.
         unset($_SESSION['messageError']);//Supprime la variable "messageError" de la session actuelle.
-    }
-   
+    } 
     ?>
     <a class="panier-input2" href="traitement.php?action=deletePanier">Supprimer le panier</a>
 
