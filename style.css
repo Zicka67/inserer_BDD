@@ -200,6 +200,8 @@ td a {
     color: orange;
 }
 
+
+
 tr:nth-child(even) {
     background-color: rgb(246, 246, 246);
 }
