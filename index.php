@@ -70,6 +70,7 @@ session_start(); //Cette instruction démarre une nouvelle session ou reprend un
                             ?>
                             <!-- <a href="product.php?id=<?= $article['id'] ?>"> <?= ucFirst($article['description']); ?></a> -->
                             <p><?= $article['price']; ?> €</p>
+                            
                         </div>
                         
                     
