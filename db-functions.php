@@ -1,5 +1,6 @@
 <?php
 
+//Etablir une connexion avec la base de donnée
 function dbFunction() {
     try
     {
