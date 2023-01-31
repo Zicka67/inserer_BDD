@@ -1,5 +1,7 @@
 <?php
 session_start(); //Cette instruction démarre une nouvelle session ou reprend une session existante pour cet utilisateur.
+include "nbProduit.php"; //Cette ligne inclut le fichier functions.php dans le code actuel.
+require_once('db-functions.php');//Cette ligne inclut le fichier db-functions.php dans le code actuel, mais qu'une seule fois.
 ?>
 
 <!DOCTYPE html>
@@ -49,39 +51,39 @@ session_start(); //Cette instruction démarre une nouvelle session ou reprend un
             <?php
             require_once('db-functions.php');
 
-            $store = findAll();
+            $db = findAll();
         
-            foreach ($store as $article) {
+            foreach ($db as $produit) {
             ?>
                 <article>
-                <a href="product.php?id=<?= $article['id'] ?>">             
+                <a href="product.php?id=<?= $produit['id'] ?>">   
                         <div>                         
-                            <img src="<?= $article['photo'] ?>" alt="<?= ucFirst($article['name']) ?>">
-                            <a href="traitement.php?action=addToCart&id=<?= $product['id'] ?>">
+                            <img src="<?= $produit['photo'] ?>" alt="<?= ucFirst($produit['name']) ?>">
+                            <a href="traitement.php?action=addToCart&id=<?= $produit['id'] ?>">
+                            </a>
                                 <div>
-                                    <?= ucFirst($article['name'])?> 
+                                    <?= ucFirst($produit['name'])?> 
                         </div>
-                    </a>
+                    
                     <div>
-                            <?= $article['description']?>
+                            <?= $produit['description']?>
                     </div>
                         <div>
-                            <?php //"<?=" va echo id de $article
+                            <?php //"<?=" va echo id de $produit
                             ?>
-                            <!-- <a href="product.php?id=<?= $article['id'] ?>"> <?= ucFirst($article['description']); ?></a> -->
-                            <p><?= $article['price']; ?> €</p>
+                            <!-- <a href="product.php?id=<?= $produit['id'] ?>"> <?= ucFirst($produit['description']); ?></a> -->
+                            <p><?= $produit['price']; ?> €</p>
                             
+                            <a href="traitement.php?action=addToCart&id=<?= $produit['id'] ?>">Test</a>
+                            
+						    </form>
                         </div>
-                        
-                    
                 </article>
             <?php
             }
             ?>
         </div>
-    </main>
-    </div>
-    
+
 
     </body>
 
